@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    
+    <EditText
+        android:id="@+id/l2_editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/l2_editText1"
+        android:layout_alignRight="@+id/l2_editText1"
+        android:layout_below="@+id/l2_editText2"
+        android:layout_marginTop="12.2667dp"
+        android:ems="10"
+        android:hint="再次确认密码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/l2_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/l2_editText3"
+        android:layout_alignRight="@+id/l2_editText1"
+        android:layout_below="@+id/l2_editText3"
+        android:layout_marginTop="13.8667dp"
+        android:background="@drawable/entry"
+        android:text="注册" />
+
+    <RelativeLayout
+        android:id="@+id/l2_relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="38.9333dp"
+        android:background="@drawable/navegation_bar"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/l2_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="#ffc72a"
+            android:textSize="18.1333dp" />
+
+        <Button
+            android:id="@+id/l2_button1"
+            android:layout_width="16.5333dp"
+            android:layout_height="15.4667dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6.4dp"
+            android:background="@drawable/return1" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/l2_editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/l2_editText3"
+        android:layout_alignRight="@+id/l2_editText3"
+        android:layout_below="@+id/l2_editText1"
+        android:layout_marginTop="12.2667dp"
+        android:ems="10"
+        android:hint="输入密码"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/l2_editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l2_editText4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12.2667dp"
+        android:ems="10"
+        android:hint="输入帐号"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/l2_editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/l2_editText1"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="58.6667dp"
+        android:ems="10"
+        android:hint="输入呢称"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+    
+    
+</RelativeLayout>

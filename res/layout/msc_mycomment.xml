@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="id"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12.2667dp"
+                android:textSize="16sp"
+                android:textColor="#646464"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cm"
+                android:layout_below="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="comment"
+                android:textSize="14.9333dp"
+                android:textColor="#969696" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/cm" >
+
+                <TextView
+                    android:id="@+id/pl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12.2667dp"
+                    android:layout_marginTop="12.2667dp"
+                    android:text="place"
+                    android:textColor="#363636"
+                    android:textSize="14.9333dp" />
+
+            </RelativeLayout>
+
+            <RatingBar
+                android:id="@+id/stars"
+                style="@style/MyRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/id"
+                android:layout_alignParentRight="true"
+                android:isIndicator="true"
+                android:padding="1.6dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

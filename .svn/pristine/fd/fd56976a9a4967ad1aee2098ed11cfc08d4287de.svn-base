@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        android:background="@drawable/msc_navegation_bar" >
+
+        <ImageButton
+            android:id="@+id/returnbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/msc_return_btn" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="我的照片" />
+                   
+    </LinearLayout>
+
+    <jhunplay.com.fanjie.ovrideLayout.MyScrollView_collection 
+
+    android:id="@+id/my_scroll_view"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" >  
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal" >  
+  
+        <LinearLayout  
+            android:id="@+id/first_column"  
+            android:layout_width="0dp"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:orientation="vertical" >  
+        </LinearLayout>  
+  
+        <LinearLayout  
+            android:id="@+id/second_column"  
+            android:layout_width="0dp"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:orientation="vertical" >  
+        </LinearLayout>  
+    </LinearLayout>
+  
+</jhunplay.com.fanjie.ovrideLayout.MyScrollView_collection>
+
+</LinearLayout>

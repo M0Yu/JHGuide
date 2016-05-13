@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <EditText
+        android:id="@+id/log_in2_editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in2_editText1"
+        android:layout_alignRight="@+id/log_in2_editText1"
+        android:layout_below="@+id/log_in2_editText2"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/comfirm_acount"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/log_in2_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in2_editText3"
+        android:layout_alignRight="@+id/log_in2_editText1"
+        android:layout_below="@+id/log_in2_editText3"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/entry"
+        android:text="@string/Registration_log_in" />
+
+    <TextView
+        android:id="@+id/log_in2_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/app_name1"
+        android:gravity="center"      
+        android:textSize="20dp"
+        android:background="@drawable/navegation_bar"/>
+
+    <ImageButton
+        android:id="@+id/log_in2_imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/log_in2_textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/return1" />
+
+    <EditText
+        android:id="@+id/log_in2_editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in2_editText3"
+        android:layout_alignRight="@+id/log_in2_editText3"
+        android:layout_below="@+id/log_in2_editText1"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/log_in2_editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in2_editText1"
+        android:layout_below="@+id/log_in2_textView1"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="@string/Enter_Nick"
+        android:inputType="textPersonName" >
+    
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/log_in2_editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_in2_editText4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_account"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>

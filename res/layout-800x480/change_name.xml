@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="38.9333dp"
+        android:background="@drawable/navegation_bar"
+        android:gravity="left" >
+
+        <TextView
+            android:id="@+id/l42_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="编辑呢称"
+            android:textColor="#ffc72a"
+            android:textSize="18.1333dp" />
+
+        <Button
+            android:id="@+id/l42_button1"
+            android:layout_width="16.5333dp"
+            android:layout_height="15.4667dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6.4dp"
+            android:background="@drawable/return1" />
+
+        <Button
+            
+            android:layout_width="16.5333dp"
+            android:layout_height="15.4667dp"
+            android:layout_marginRight="6.4dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/l42_textView6"
+            android:background="@drawable/confirm" />
+
+        <TextView
+            android:id="@+id/l43_button2"
+            android:layout_width="30.9333dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="39.4667dp"
+        android:layout_marginLeft="14.9333dp"
+        android:layout_marginRight="14.9333dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/h7_03" >
+
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:id="@+id/l42_editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColorHint="#b7b7b7"
+            android:hint="呢称"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"   
+    android:orientation="vertical" 
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/infob"
+        >
+
+        <Button
+            android:id="@+id/LifeInfoBtn1"
+            android:layout_width="18.1333dip"
+            android:layout_height="14.4000dip"
+            android:layout_marginLeft="14.4000dip"
+            android:layout_marginTop="14.9333dip"
+            android:background="@drawable/information"
+            />
+
+        <jhunplay.com.fanjie.ovrideLayout.MarqueeText
+            android:id="@+id/auto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14.9333dip"
+            android:layout_toRightOf="@id/LifeInfoBtn1"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="关于新建实验 大楼工程施工需要停水的通知"
+            android:textColor="#2ea6f2"
+            android:typeface="sans"
+            android:textSize="16.0000sp" 
+            />
+
+        <TextView
+            android:id="@+id/LifeInfoTxt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="false"
+            android:layout_below="@id/auto"
+            android:layout_marginBottom="14.93333dip"
+            android:layout_marginTop="14.9333dip"
+            android:layout_marginRight="14.9333dip"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/daa"
+            android:textColor="#2ea6f2"
+            android:typeface="sans"
+            android:textSize="16.0000sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical"
+       
+         >
+
+        <com.ab.view.pullview.AbPullToRefreshView
+            android:id="@+id/mPullRefreshView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+                                     
+            <ListView
+                android:id="@+id/LifeIfoLv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="8.5333dip"
+                android:layout_marginRight="8.5333dip"
+                android:layout_marginTop="8.5333dip"
+                android:divider="@drawable/background"
+                android:dividerHeight="8.5333dip" >
+            </ListView>
+        </com.ab.view.pullview.AbPullToRefreshView>
+    </LinearLayout>
+
+</LinearLayout>

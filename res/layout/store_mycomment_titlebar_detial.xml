@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navegation_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageButton"
+            android:layout_alignParentRight="true"
+            android:text="发送"
+            android:background="@color/transparent"
+            android:textColor="@color/orange" />
+
+        <ImageButton
+            android:id="@+id/backToUserCommentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/sendButton"
+            android:background="@color/white"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/myCommentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sendButton"
+            android:layout_alignBottom="@+id/sendButton"
+            android:layout_centerHorizontal="true"
+            android:text="我的评论"
+            android:textColor="@color/orange"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

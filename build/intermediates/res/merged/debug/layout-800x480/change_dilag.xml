@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="103.4557dp"
+        android:background="@drawable/up"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/l41_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:gravity="center"
+            android:textSize="34px"
+            android:textColor="#7d7d7d"
+            android:text="更换头像" />
+
+        <TextView
+            android:id="@+id/l41_textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.47"
+            android:gravity="center"
+            android:textSize="34px"
+            android:textColor="#7d7d7d"
+            android:text="查看大头像" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/l41_button3"
+        android:layout_width="match_parent"
+        android:layout_height="51.2dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5.3333dp"
+        android:gravity="center"
+        android:background="@drawable/below"
+        android:text="取消"
+        android:textColor="#3c97e9"
+        android:textSize="34px" />
+
+</LinearLayout>
+<!-- From: file:/C:/Users/adminstrater/Desktop/Second%20WorkSpace/JHGuide/res/layout-800x480/change_dilag.xml -->

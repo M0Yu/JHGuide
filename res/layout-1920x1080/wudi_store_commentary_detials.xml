@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:background="@color/gray_white">
+
+    <EditText
+        android:id="@+id/mySotrecommentEditText"
+        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22.5dp"
+        android:layout_marginRight="22.5dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/wudi_discuss_word_03"
+        android:hint="请输入评论信息"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="textMultiLine"
+        android:maxLines="50"
+        android:scrollbars="vertical"
+        android:singleLine="true"
+        android:textSize="18dp"
+        android:textStyle="normal" >
+
+    </EditText>
+
+    <RatingBar
+        android:id="@+id/myCommentRatingBar"
+        style="@style/ttRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20.25dp"
+        android:numStars="5" />
+
+</RelativeLayout>

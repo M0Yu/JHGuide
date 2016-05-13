@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="type">
+        <item>折价出售</item>
+        <item>以物换物</item>
+        </array>
+</resources>

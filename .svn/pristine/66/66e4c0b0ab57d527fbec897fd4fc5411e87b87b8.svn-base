@@ -1,0 +1,112 @@
+package com.fanjie.activity.rightSlider;
+
+import jhunplay.com.fanjie.tool.Msharepreference;
+import jhunplay.com.fanjie.tool.Tool;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.block.jhguide.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+public class Change extends Activity implements OnClickListener {
+
+	private ImageButton my4image;
+	private Button my4button;
+	private EditText my4edit1, my4edit2, my4edit3, my4edit4;
+	private String newname, password1, password2, password3;
+	private Msharepreference msharepreference;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.log_in4);
+		msharepreference = new Msharepreference(this, "information");
+		my4image = (ImageButton) findViewById(R.id.log_in4_imageButton1);
+		my4edit1 = (EditText) findViewById(R.id.log_in4_editText1);
+		my4edit2 = (EditText) findViewById(R.id.log_in4_editText2);
+		my4edit3 = (EditText) findViewById(R.id.log_in4_editText3);
+		my4edit4 = (EditText) findViewById(R.id.log_in4_editText4);
+		String name = msharepreference.getStringProperty("name");
+		my4edit4.setText(msharepreference.getStringProperty("name"));
+		my4button = (Button) findViewById(R.id.log_in4_button1);
+		my4image.setOnClickListener(this);
+		my4button.setOnClickListener(this);
+		my4image.getBackground().setAlpha(10);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.log_in4_imageButton1:
+			// Intent intent = new Intent();
+			// intent.setClass(Change.this, MyInformation.class);
+			// startActivity(intent);
+			finish();
+			break;
+		case R.id.log_in4_button1:
+			String name = my4edit4.getText().toString().trim();
+			String oldpassword = my4edit1.getText().toString().trim();
+			String password = my4edit2.getText().toString().trim();
+			String password2 = my4edit3.getText().toString().trim();
+			if (password.equals(password2)) {
+				JSONObject jsonObject = Tool.getJSONObject(0, "ids",
+						"update_password", "login_id",
+						msharepreference.getStringProperty("login_id"),
+						"password", password, "oldpassword", oldpassword,
+						"name", name);
+				ChangeUser user = new ChangeUser();
+				user.execute(jsonObject);
+			}
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	public class ChangeUser extends AsyncTask<JSONObject, Integer, String> {
+
+		@Override
+		protected String doInBackground(JSONObject... params) {
+			// TODO Auto-generated method stub
+			String result = Tool.changePassword(params[0]);
+			return result;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			try {
+				String success = (String) new JSONObject(result)
+				.get("msg");
+				if(success.equals("执行成功")){
+					Toast.makeText(Change.this, success, 0).show();
+					finish();
+				}else if (success.equals("执行失败")){
+					Toast.makeText(Change.this, success, 0).show();
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+
+	}
+
+}

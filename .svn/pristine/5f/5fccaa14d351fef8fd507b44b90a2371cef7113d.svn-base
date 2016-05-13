@@ -1,0 +1,105 @@
+package jhunplay.com.fanjie.adapter;
+
+import java.util.List;
+import java.util.Map;
+
+import com.ab.util.AbViewHolder;
+
+import android.app.ActionBar.LayoutParams;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MyAdapter extends BaseAdapter{
+	private Context mContext;
+	// xml转View对象
+	private LayoutInflater mInflater;
+	// 单行的布局
+	private int mResource;
+	// 列表展现的数据
+	private List mData;
+	// Map中的key
+	private String[] mFrom;
+	// view的id
+	private int[] mTo;
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return mData.size();
+	}
+    
+	public MyAdapter(Context context, List data, int resource,
+			String[] from, int[] to)
+	{
+		this.mContext = context;
+    	this.mData = data;
+    	this.mResource = resource;
+    	this.mFrom = from;
+    	this.mTo = to;
+    	this.mInflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	}
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return mData.get(arg0);
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return arg0;
+	}
+
+	@Override
+	public View getView(int arg0, View arg1, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		if (arg1 == null) {
+			//使用自定义的list_items作为Layout
+			arg1 = mInflater.inflate(mResource, arg2, false);
+		}
+
+		
+		
+		TextView LifeInfoTxt2 = AbViewHolder.get(arg1, mTo[0]);
+		TextView LifeInfoTxt3 = AbViewHolder.get(arg1, mTo[1]);
+//		ImageView itemsIcon_3 = AbViewHolder.get(arg2, mTo[2]);
+		
+		/*LayoutParams params = itemsIcon_1.getLayoutParams() ;
+		params.width = (int) (size.width/3);
+		itemsIcon_1.setLayoutParams(params);
+		
+		params = itemsIcon_2.getLayoutParams() ;
+		params.width = (int) (size.width/3);
+		itemsIcon_2.setLayoutParams(params);
+		
+		params = itemsIcon_3.getLayoutParams() ;
+		params.width = (int) (size.width/3);
+		itemsIcon_3.setLayoutParams(params);
+		itemsIcon_1.setLayoutParams(params);*/
+		// 获取该行的数据
+		final Map<String, Object> obj = (Map<String, Object>) mData
+				.get(arg0);
+
+		LifeInfoTxt2.setText((String)obj.get(mFrom[0]));
+		LifeInfoTxt3.setText((String)obj.get(mFrom[1]));
+		
+		/*android.view.ViewGroup.LayoutParams params=arg1.getLayoutParams();
+		params.width=400;
+		arg1.setLayoutParams(params);*/
+		return arg1;
+	}
+	
+}
+		
+		
+
+		
+		
+
+		

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+   <LinearLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:padding="11.7333dp"
+       android:orientation="vertical"
+       >
+       <TextView 
+           android:id="@+id/textViewContent"           
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content" 
+           android:text="@string/textViewContent" 
+           android:textSize="18.1333dp"  
+           android:textColor="#7e7e7e"  
+           android:lineSpacingExtra="3dp"  
+           />
+
+       <EditText
+           android:id="@+id/editTextContent"
+           android:layout_width="fill_parent"
+           android:layout_height="192dp"
+           android:layout_marginTop="5dp"
+           android:textColor="#7e7e7e"
+           android:padding="10dp"
+           android:background="@drawable/let_me_say"     
+           android:gravity="top"
+           android:hint="@string/editText_view_lw"
+           android:textSize="18.1333dp"   
+           android:scrollbars="vertical" >
+          
+           <requestFocus />
+       </EditText>
+
+       <Button
+           android:id="@+id/buttonSend"
+           android:layout_marginTop="42.6667dp"
+           android:layout_width="match_parent"
+           android:layout_height="42.6667dp"
+           android:background="@drawable/lw_sugeestionsubmit_button"
+           android:text="@string/button_view_lw" 
+           android:textSize="16dp"
+           android:textColor="@color/white"
+           />
+
+   </LinearLayout>
+
+</RelativeLayout>

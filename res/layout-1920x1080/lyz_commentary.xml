@@ -1,0 +1,20 @@
+<com.ab.view.pullview.AbPullToRefreshView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mPullRefreshView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efeff4"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/commentaryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18.00dp"
+        android:layout_marginRight="18.00dp"
+        android:orientation="vertical" 
+        android:divider="@drawable/com_line"
+        android:background="#efeff4" >
+    </ListView>
+
+</com.ab.view.pullview.AbPullToRefreshView>

@@ -1,0 +1,331 @@
+package com.fanjie.activity.thoseyear;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
+import javax.security.auth.PrivateCredentialPermission;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import jhunplay.com.block.tool.ActivitySplitAnimationUtil;
+import jhunplay.com.fanjie.tool.Msharepreference;
+import jhunplay.com.fanjie.tool.Tool;
+
+import com.block.jhguide.R;
+
+import android.R.color;
+import android.R.integer;
+import android.content.ComponentCallbacks;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import com.ab.activity.AbActivity;
+import com.ab.task.AbTask;
+import com.ab.task.AbTaskItem;
+import com.ab.task.AbTaskListListener;
+import com.ab.task.AbTaskListener;
+import com.ab.view.pullview.AbPullToRefreshView;
+import com.ab.view.pullview.AbPullToRefreshView.OnFooterLoadListener;
+import com.ab.view.pullview.AbPullToRefreshView.OnHeaderRefreshListener;
+import com.ab.view.titlebar.AbBottomBar;
+import com.ab.view.titlebar.AbTitleBar;
+
+public class commentary extends AbActivity implements OnFooterLoadListener,OnHeaderRefreshListener{
+
+	private ListView comListView;
+	private HttpClient client = new DefaultHttpClient();
+	private List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+	private AbBottomBar mAbBottomBar;
+	private AbPullToRefreshView mPullToRefreshView;
+	private AbTitleBar mAbTitleBar;
+	private commentary mCommentary = null;
+	private SimpleAdapter mSimpleAdapter;
+	private int currentPage;
+	private final int pageSize = 10;
+	private Tool mTool;
+	private Msharepreference msharepreference;
+	private String store_id;
+	
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+        ActivitySplitAnimationUtil.prepareAnimation(this);
+		setAbContentView(R.layout.lyz_commentary);
+	    ActivitySplitAnimationUtil.animate(this, 1000);
+		TitleSet();
+		BottomSet();
+		initview();
+		initdate();		
+		showProgressDialog();
+		refreshTask();
+	}
+	
+	
+	private void TitleSet(){
+		mAbTitleBar = this.getTitleBar();
+		View view = mInflater.inflate(R.layout.lyz_titlebar, null);
+		ImageButton mButton = (ImageButton) view.findViewById(R.id.imageButton);
+		mButton.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+		mAbTitleBar.addView(view);
+	}
+	
+	private void BottomSet(){
+		mAbBottomBar = this.getBottomBar();
+		View view = mInflater.inflate(R.layout.lyz_bottombar, null);
+		LinearLayout clickButton = (LinearLayout) view.findViewById(R.id.clickme);
+		clickButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(commentary.this,commentary_detials.class);
+				intent.putExtra("store_id", store_id);
+				startActivityForResult(intent, 1);
+			}
+		});
+		mAbBottomBar.setBottomBarBackground(R.drawable.tab);
+		mAbBottomBar.setPadding(0, 40, 0, 40);
+		mAbBottomBar.setBottomView(view);
+	}
+	
+	
+	private void initview(){
+		mTool = new Tool(this);
+		msharepreference = new Msharepreference(this,"information");
+		mPullToRefreshView = (AbPullToRefreshView) findViewById(R.id.mPullRefreshView);
+		comListView = (ListView) findViewById(R.id.commentaryList);
+		
+		Intent mintent = getIntent();
+		store_id = mintent.getStringExtra("pic_id");
+	}
+	
+	private void initdate(){
+		//设置监听器
+		mPullToRefreshView.setOnHeaderRefreshListener(this);
+		mPullToRefreshView.setOnFooterLoadListener(this);
+		
+		//设置进度条的样式
+        mPullToRefreshView.getHeaderView().setHeaderProgressBarDrawable(
+                this.getResources().getDrawable(R.drawable.progress_circular));
+        mPullToRefreshView.getFooterView().setFooterProgressBarDrawable(
+                this.getResources().getDrawable(R.drawable.progress_circular));
+				
+		mSimpleAdapter = new SimpleAdapter(commentary.this,list,R.layout.lyz_items,new String[]{"user_name","content"}
+		,new int[]{R.id.nameView,R.id.comView}); 
+		comListView.setAdapter(mSimpleAdapter);
+	} 
+			
+	private void refreshTask(){
+		AbTask mAbTask = new AbTask();
+		final AbTaskItem item = new AbTaskItem();
+		item.setListener(new AbTaskListListener() {
+			
+			@Override
+			public void update(List<?> arg0) {
+				// TODO Auto-generated method stub
+				removeProgressDialog();
+				
+				List<Map<String, Object>> newList 
+				= (List<Map<String, Object>>) arg0;
+				
+				list.clear();
+				if(newList!=null && newList.size()>0){
+					list.addAll(newList);
+					mSimpleAdapter.notifyDataSetChanged();
+					newList.clear();
+				}
+				mPullToRefreshView.onHeaderRefreshFinish();
+			}
+			
+			@Override
+			public List<?> getList() {
+				// TODO Auto-generated method stub
+				List<Map<String, Object>> newList = null;
+                try {
+                	currentPage = 1;
+                    Thread.sleep(1000);    
+					newList = new ArrayList<Map<String, Object>>();	                
+	                newList = toolManager((currentPage - 1)*pageSize, pageSize );
+                    
+                } catch (Exception e) {
+                }
+                return newList;
+			}
+		});
+		mAbTask.execute(item);
+	}
+		
+	
+	private void loadMoreTask(){
+		AbTask mAbTask = new AbTask();
+		final AbTaskItem item = new AbTaskItem();
+		item.setListener(new AbTaskListListener() {
+				
+			@Override
+			public void update(List<?> arg0) {
+				// TODO Auto-generated method stub
+				 List<Map<String, Object>> newList 
+                 = (List<Map<String, Object>>) arg0;
+				 
+				 if(newList!=null && newList.size()>0){
+					 list.addAll(newList);
+					 mSimpleAdapter.notifyDataSetChanged();
+					 newList.clear();
+				 } else {
+						Toast.makeText(commentary.this, "没有跟多评论", 0).show();
+				 }
+				 mPullToRefreshView.onFooterLoadFinish();
+			}
+				
+			@Override
+			public List<?> getList() {
+				// TODO Auto-generated method stub
+				
+				List<Map<String, Object>> newList = null;
+				try {
+						newList = new ArrayList<Map<String, Object>>();	
+						if(list.size() >= currentPage*pageSize){
+							currentPage++;
+							Thread.sleep(1000);																	
+							newList = toolManager((currentPage - 1)*pageSize , pageSize );
+						} 					
+					} catch (Exception e) {
+						// TODO: handle exception
+						currentPage--;
+						newList.clear();
+					}
+					return newList;
+				};
+			});
+			mAbTask.execute(item);
+		}
+
+
+	@Override
+	public void onHeaderRefresh(AbPullToRefreshView arg0) {
+			// TODO Auto-generated method stub
+			refreshTask();
+		}
+
+
+	@Override
+	public void onFooterLoad(AbPullToRefreshView arg0) {
+			// TODO Auto-generated method stub
+			loadMoreTask();
+		}
+
+
+//	class MyTask extends AsyncTask<JSONObject, Void, String>{
+//
+//		
+//		@Override
+//		protected String doInBackground(JSONObject... arg0) {
+//			// TODO Auto-generated method stub
+//			String result = mTool.httpPost(arg0); 
+//			return result;
+//		}
+//
+//		@Override
+//		protected void onPostExecute(String result) {
+//			// TODO Auto-generated method stub			
+//			
+//			
+//		}
+//		
+//		
+//
+//	}
+//	json解析
+//	@SuppressWarnings("unused")
+//	private List<HashMap<String, String>> jsonjx(String str) throws JSONException{
+//		List<HashMap<String, String>> newList = new ArrayList<HashMap<String,String>>();
+//		
+//		JSONObject mJsonObjs = new JSONObject(str);
+//		String success = mJsonObjs.optString("msg");
+//		if(success.equals("执行成功")){
+//			JSONArray mJsonArray = mJsonObjs.getJSONArray("obj");
+//			for(int i =0;i<mJsonArray.length();i++){
+//				HashMap<String,String> map = new HashMap<String, String>();
+//				JSONObject var = (JSONObject) mJsonArray.opt(i);
+//				map.put("user_name",var.optString("user_name"));
+//				map.put("content", var.optString("content"));
+//				newList.add(map);
+//			}
+//		}
+//		return newList;
+//	}
+
+	private ArrayList<Map<String, Object>> toolManager(int min,int max){
+		ArrayList<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		String[] key = new String[]{"user_name","content"};
+		String result = null;        
+        //params的参数，含图片的ID，评论数量的最大值和最小值
+        JSONObject params = new JSONObject();
+        try {
+			params.put("store_id",Integer.parseInt(store_id));
+	        params.put("type", 1);
+	        params.put("min", min);
+	        params.put("max", max);
+	        params.put("ids", "get_commonts");
+	        result = mTool.registPost(params);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        list = mTool.Json(result, key);
+        return list;
+	}
+
+
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		// TODO Auto-generated method stub
+		if(arg1 == 1){
+			refreshTask();
+		}
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		if(mTool.haveShowDialog()){
+			mTool.removeDialog();
+		}
+	}
+	
+	
+}

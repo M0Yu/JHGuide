@@ -1,0 +1,276 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efeff4"
+    tools:context="com.example.jianghan.StoreDetailActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <RelativeLayout
+        android:id="@+id/myStoreDetails_head"
+        android:layout_width="match_parent"
+        android:layout_height="57.6dp"
+        android:background="@drawable/navegation"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/storeDetailback"
+            android:layout_width="24dp"
+            android:layout_height="22.8dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="16.7996dp"
+            android:background="@drawable/return1" />
+
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="店铺详情"
+            android:textColor="#ffc72a"
+            android:textSize="20.3996sp" />
+
+        <ImageButton
+            android:id="@+id/storedetailcollectButton"
+            android:layout_width="22.8dp"
+            android:layout_height="22.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12.6dp"
+            android:background="#ffff"
+            android:src="@drawable/collect_button_before" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/storeDetailScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myStoreDetails_head" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/mainStoreRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="19.2dp"
+                android:paddingLeft="13.2dp"
+                android:paddingRight="13.2dp"
+                android:paddingTop="19.2dp" >
+
+                <TextView
+                    android:id="@+id/storeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:maxEms="8"
+                    android:text="权金城"
+                    android:textColor="#363636"
+                    android:textSize="21.6dp" />
+
+                <RatingBar
+                    android:id="@+id/totalRatingBar"
+                    style="@style/myratingbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="225dp"
+                    android:layout_marginTop="3.375dp"
+                    android:isIndicator="true"
+                    android:numStars="5" />
+
+                <TextView
+                    android:id="@+id/scoretextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/totalRatingBar"
+                    android:layout_marginLeft="9dp"
+                    android:layout_toRightOf="@+id/totalRatingBar"
+                    android:text="3.5分"
+                    android:textColor="#959595"
+                    android:textSize="16.8sp" />
+
+                <ImageView
+                    android:id="@+id/storeimageView"
+                    android:layout_width="179.4dp"
+                    android:layout_height="111dp"
+                    android:layout_below="@+id/storeName"
+                    android:src="@drawable/wudi_picture" />
+
+                <TextView
+                    android:id="@+id/storeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/storeimageView"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_toRightOf="@+id/storeimageView"
+                    android:text="@string/storeDetailExample"
+                    android:textColor="#959595"
+                    android:textSize="13.1625sp" />
+
+                <ImageButton
+                    android:id="@+id/zanbutton"
+                    android:layout_width="24dp"
+                    android:layout_height="23.25dp"
+                    android:layout_alignBottom="@+id/zanNum"
+                    android:layout_marginTop="17.4375dp"
+                    android:layout_toLeftOf="@+id/zanNum"
+                    android:background="@drawable/wudi_hollow_praise" />
+
+                <TextView
+                    android:id="@+id/zanNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/storeimageView"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignRight="@+id/storeDetail"
+                    android:layout_marginLeft="7.2dp"
+                    android:layout_marginTop="22.5dp"
+                    android:text="999"
+                    android:textColor="#959595" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/storeLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainStoreRelative" >
+
+                <ImageView
+                    android:id="@+id/fengexian_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginRight="13.2dp"
+                    android:src="@drawable/wudi_line" />
+
+                <TextView
+                    android:id="@+id/storeaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fengexian_1"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginTop="15dp"
+                    android:lines="2"
+                    android:maxEms="14"
+                    android:text="沌口经开万达店c51号"
+                    android:textColor="#a6a6a6"
+                    android:textSize="16.8sp" />
+
+                <ImageView
+                    android:id="@+id/fengexian_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/storeaddress"
+                    android:layout_marginLeft="14.325dp"
+                    android:layout_marginRight="13.2dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/wudi_line" />
+
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fengexian_2"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginTop="13.2dp"
+                    android:textColor="#a6a6a6"
+                    android:textSize="16.8sp" />
+
+                <ImageView
+                    android:id="@+id/fengexian_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phonebutton"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginRight="13.2dp"
+                    android:layout_marginTop="10.5dp"
+                    android:src="@drawable/wudi_line" />
+
+                <TextView
+                    android:id="@+id/activityInfoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fengexian_3"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginTop="18.075dp"
+                    android:text="活动信息"
+                    android:textColor="#363636"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/activityContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activityInfoTitle"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginRight="13.2dp"
+                    android:layout_marginTop="13.2dp"
+                    android:textColor="#969696"
+                    android:textSize="16.8sp" />
+
+                <ImageView
+                    android:id="@+id/fengexian_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activityContent"
+                    android:layout_marginLeft="13.2dp"
+                    android:layout_marginRight="13.2dp"
+                    android:layout_marginTop="10.5dp"
+                    android:src="@drawable/wudi_line" />
+
+                <ListView
+                    android:id="@+id/detaillistView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fengexian_4"
+                    android:divider="@drawable/wudi_line"
+                    android:padding="13.8dp" >
+                </ListView>
+
+                <ImageButton
+                    android:id="@+id/lookbutton"
+                    android:layout_width="28.8dp"
+                    android:layout_height="28.8dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toLeftOf="@+id/chakanpl"
+                    android:background="@drawable/wudi_comments"
+                    android:text="Button" />
+
+                <TextView
+                    android:id="@+id/chakanpl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/phonebutton"
+                    android:layout_marginTop="6.75dp"
+                    android:text="更多评论"
+                    android:textColor="#79a6eb" />
+
+                <ImageButton
+                    android:id="@+id/mapbutton"
+                    android:layout_width="18.3333dp"
+                    android:layout_height="21.667dp"
+                    android:layout_alignRight="@+id/fengexian_2"
+                    android:layout_alignTop="@+id/storeaddress"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/positioning_change" />
+
+                <ImageButton
+                    android:id="@+id/phonebutton"
+                    android:layout_width="20.625dp"
+                    android:layout_height="24.3754dp"
+                    android:layout_toRightOf="@+id/phoneNumber"
+                    android:layout_alignBottom="@+id/phoneNumber"
+                    android:layout_alignLeft="@+id/mapbutton"
+                    android:background="@drawable/phone"
+                    android:text="Button" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+   
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navegationbar"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_marginLeft="16.875dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/return_lw_01" />
+
+        <TextView
+            android:id="@+id/textTitleContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/suggestion_back"
+            android:textColor="#ffc72a"
+            android:textSize="20.4dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

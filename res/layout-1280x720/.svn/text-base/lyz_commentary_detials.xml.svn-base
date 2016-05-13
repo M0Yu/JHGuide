@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_white"
+    android:clickable="false"
+    android:dividerPadding="1dp"
+    android:gravity="start"
+    android:longClickable="false"
+    android:orientation="vertical"
+    android:scrollbarStyle="insideInset"
+    android:scrollbars="vertical"
+    android:showDividers="beginning"
+    android:textAlignment="textStart" >
+
+    <EditText
+        android:id="@+id/commentaryText"
+        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/discuss_word_03"
+        android:hint="@string/pl"
+        android:inputType="textMultiLine"
+        android:maxLines="50"
+        android:scrollbars="vertical"
+        android:singleLine="true"
+        android:textSize="20dp"
+        android:textStyle="normal" >
+
+        <requestFocus />
+
+    </EditText>
+
+</LinearLayout>

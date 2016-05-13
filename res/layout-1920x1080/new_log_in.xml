@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="57.6dp"
+        android:background="@drawable/navegation_bar"
+        android:gravity="left" >
+
+        <TextView
+            android:id="@+id/log_in1_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="修改资料"
+            android:textColor="#ffc72a"
+            android:textSize="20.4dp" />
+
+        <Button
+            android:id="@+id/log_in1_button1"
+            android:layout_width="24dp"
+            android:layout_height="22.8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="9dp"
+            android:layout_alignTop="@+id/log_in1_textView6"
+            android:background="@drawable/return1" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68.4dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/log_in1_imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/photo_03" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/log_in1_editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="69dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginTop="75.6dp"
+        android:ems="10"
+        android:textSize="20.4dp"
+        android:hint="账号"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/log_in1_editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="69dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginTop="10.2dp"
+        android:ems="10"
+        android:textSize="20.4dp"
+        android:hint="密码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/log_in1_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:background="@drawable/entry"
+        android:layout_marginLeft="69dp"
+        android:layout_marginRight="69dp"
+        android:textColor="#fdfdfd"
+        android:text="登录" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end" >
+
+        <TextView
+            android:id="@+id/log_in1_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="118.8dp"
+            android:textColor="#b3b3b3"
+            android:textSize="15dp"
+            android:text="没有账号" />
+
+        <Button
+            android:id="@+id/log_in1_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="#ffffff"
+            android:text="点击并注册"
+            android:textColor="#ecaa00"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/log_in1_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#b3b3b3"
+            android:textSize="15dp"
+            android:text="登录吧" />
+
+    </LinearLayout>
+    
+    
+</LinearLayout>

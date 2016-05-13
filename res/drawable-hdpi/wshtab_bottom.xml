@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/red"
+    android:orientation="vertical" >
+
+    <com.block.wsh.AbBottomTabViewc
+        android:id="@+id/mBottomTabView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentTop="true"
+        /> 
+   <android.support.v4.view.ViewPager
+            android:id="@+id/GovernPv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"   
+            android:layout_below="@+id/mBottomTabView1"                
+            />     
+   
+    
+  
+
+</RelativeLayout>

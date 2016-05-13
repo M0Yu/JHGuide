@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+   <RelativeLayout
+        android:id="@+id/myStoreCommentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="51.2dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/navegation" >
+
+        <Button
+            android:id="@+id/backToStoreCommentButton"
+            android:layout_width="21.3333dp"
+            android:layout_height="20.2667dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="14.933dp"
+            android:background="@drawable/return1" />
+
+        <TextView
+            android:id="@+id/myCommentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/backToStoreCommentButton"
+            android:layout_alignBottom="@+id/backToStoreCommentButton"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="我的评论"
+            android:textColor="#ffc72a"
+            android:textSize="18.133sp" />
+
+        <Button
+            android:id="@+id/sendCommentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11.2dp"
+            android:background="#ffff"
+            android:text="发送"
+            android:textColor="#ffc72a"
+            android:textSize="18.133sp"
+             />
+    </RelativeLayout>
+    
+   <RelativeLayout
+        android:id="@+id/myStoreComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_white" >
+
+        <EditText
+            android:id="@+id/mySotrecommentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/wudi_discuss_word_03"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="top"
+            android:hint="请输入评论信息"
+            android:inputType="textMultiLine"
+            android:maxLines="50"
+            android:scrollbars="vertical"
+            android:singleLine="true"
+            android:textSize="16dp"
+            android:textStyle="normal" >
+
+            <requestFocus />
+        </EditText>
+
+        <RatingBar
+            android:id="@+id/myCommentRatingBar"
+            style="@style/ttRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:numStars="5" />
+    </RelativeLayout>
+   
+   
+
+</LinearLayout>

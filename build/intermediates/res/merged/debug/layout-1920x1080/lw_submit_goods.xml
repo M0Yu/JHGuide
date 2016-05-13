@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.myinformationup.lw_submit_myGoods" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navegation"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="上传宝物"
+            android:textColor="#ffc72a"
+            android:textSize="18.1333dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"     
+        android:layout_marginRight="22.4dp"
+        android:layout_marginLeft="22.4dp"
+        android:layout_marginTop="22.4dp"
+        android:background="@drawable/lw_goods_magess_12"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <EditText
+            android:id="@+id/text_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13.8667dp"
+            android:gravity="center"
+            android:hint="输入名称"          
+            android:background="@null"
+            android:textColor="#b4b4b4"
+            android:textSize="18.1333dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lw_goods_image_09" />
+        
+   <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"      
+            android:layout_marginTop="13dp"
+            android:gravity="center" >
+
+            <Spinner
+                android:id="@+id/myspinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/lw_goods_update_13"
+                android:entries="@array/type"
+                android:prompt="@string/tip"
+                />
+        </LinearLayout>   
+
+        <EditText
+            android:id="@+id/text_describe"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="120dp"
+            android:background="@drawable/let_me_say"
+            android:gravity="top"
+            android:hint="说说你的宝贝吧"
+            android:textColor="#b4b4b4"
+            android:textSize="18.1333dp"
+            android:maxLength="100"
+            android:padding="2dp"          
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22.4dp"
+        android:layout_marginRight="22.4dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/call_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="联系方式"
+            android:background="@drawable/lw_button_shang_06"
+            android:textColor="#b4b4b4"
+            android:textSize="18.1333dp" />
+
+        <EditText
+            android:id="@+id/text_photo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="QQ号/手机号"
+            android:background="@drawable/lw_button_xia_3_07"
+            android:textColor="#b4b4b4"
+            android:textSize="18.1333dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22.4dp"
+        android:layout_marginRight="22.4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/lw_sugeestionsubmit_button"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+</LinearLayout><!-- From: file:/C:/Users/adminstrater/Desktop/Second%20WorkSpace/JHGuide/res/layout-1920x1080/lw_submit_goods.xml -->

@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="100.1739dip"
+    android:orientation="horizontal"
+    android:background="@drawable/infos"
+     >
+
+    <RelativeLayout 
+     android:id="@+id/schinforl"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:layout_weight="3" 
+     android:layout_marginLeft="6dip"
+     android:layout_marginTop="6dip"
+     android:layout_marginBottom="6dip"
+     android:background="@drawable/image_border"  
+        >
+       <ProgressBar
+            android:id="@+id/schinfoImageProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+        <ImageView 
+    android:id="@+id/schinfoimage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" 
+    android:scaleType="fitXY"   
+            />   
+        
+    </RelativeLayout>
+    <RelativeLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"    
+        >
+           <TextView 
+     android:id="@+id/LifeInfoTxt2"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:textSize="20.8696sp" 
+     android:layout_marginTop="13.9130dp"
+     android:layout_marginLeft="13.9130dp"
+     android:layout_marginRight="13.9130dp"
+     android:singleLine="true"
+     android:typeface="sans"
+     android:gravity="left"  
+        />
+    <TextView 
+     android:id="@+id/LifeInfoTxt3"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:textSize="20.8696sp"
+     android:layout_alignParentRight="true"
+     android:layout_marginRight="13.9130dp"
+     android:layout_below="@id/LifeInfoTxt2"
+     android:singleLine="true"
+     android:layout_marginTop="13.9130dp"  
+     android:layout_marginBottom="13.9130dp"
+     android:gravity="right" 
+     android:typeface="sans"
+        />
+    </RelativeLayout>
+    
+</LinearLayout>

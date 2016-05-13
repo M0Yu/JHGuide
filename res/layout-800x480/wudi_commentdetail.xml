@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="51.2dp"
+        android:background="@drawable/navegation" >
+
+        <Button
+            android:id="@+id/backToStoreList"
+            android:layout_width="27.8261dp"
+            android:layout_height="26.4348dp"
+            android:layout_marginLeft="10.4348dp"
+            android:layout_marginTop="19.4783dp"
+            android:background="@drawable/return1" />
+
+        <TextView
+            android:id="@+id/UserCommentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/backToStoreList"
+            android:layout_alignBottom="@+id/backToStoreList"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="用户评论"
+            android:textColor="#ffc72a"
+            android:textSize="23.6522sp" />
+    </RelativeLayout>
+
+    <com.ab.view.pullview.AbPullToRefreshView
+        android:layout_below="@+id/top_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/wudi_mPullRefreshView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#efeff4"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/mcommentListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/my_line"
+            android:padding="15.3043dp" />
+
+    </com.ab.view.pullview.AbPullToRefreshView>
+    
+    <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ffff" >
+
+            <TextView
+                android:id="@+id/letmesay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="60dp"
+                android:text="我来说一句"
+                android:textSize="19.4783sp"
+                android:textColor="#79a6eb" />
+
+            <ImageButton
+                android:id="@+id/pinglunbutton"
+                android:layout_width="25.8333dp"
+                android:layout_height="29.18dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_toLeftOf="@+id/letmesay"
+                android:background="#ffffff"
+                android:src="@drawable/wudi_comments"
+                android:text="Button" />
+        </RelativeLayout>
+
+</RelativeLayout>

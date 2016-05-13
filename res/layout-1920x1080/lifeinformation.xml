@@ -1,0 +1,112 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical" >
+
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <RelativeLayout 
+    android:id="@+id/GovernInfom1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/navegation"   
+        >
+        
+        <TextView 
+    android:id="@+id/GovernInfomTv"
+    android:layout_width="fill_parent"
+    android:layout_height="64dip"
+    android:gravity="center"
+    android:textColor="#FFA500"
+    android:textSize="20sp"    
+    android:text="@string/xyxq"
+            />
+    <ImageButton 
+    android:id="@+id/GovernInfomIB"
+    android:layout_marginTop="16dip"
+    android:layout_width="30dip"
+    android:layout_height="30dip"
+    android:layout_marginLeft="20dip"    
+    android:background="@drawable/back"
+        />    
+        
+     
+    </RelativeLayout>
+    
+  <RelativeLayout
+      android:id="@+id/GovernInfom2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="false"
+      android:layout_below="@id/GovernInfom1"
+      android:background="@drawable/background" >
+      
+       <TextView 
+    android:id="@+id/schinfotxt1" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="21.0000dip"
+    android:textSize="20.4000sp"
+    android:gravity="center"
+    android:typeface="sans"
+    />  
+     <!-- 
+       <jhunplay.com.fanjie.ovrideLayout.wshTextview_indent
+    android:id="@+id/schinfotxt2" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:layout_below="@id/schinfotxt1"
+    android:layout_marginTop="10dip"
+    android:textSize="13sp"
+    android:singleLine="false"
+    android:text="  因为学校新建实验大楼施工需要，全校将于今晚23:00全校停水，请做好相关生活安排，给大家带来不便，请原谅"       
+           /> -->
+    <TextView 
+    android:id="@+id/schinfotxt2" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@id/schinfotxt1"
+    android:layout_marginTop="24.0000dip"  
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginLeft="14.4000dip"
+    android:layout_marginRight="14.4000dip"
+    android:textSize="18.0000sp"
+    android:singleLine="false"
+    android:typeface="sans"
+    android:lineSpacingExtra="15.0000dip"
+    /> 
+    
+    <TextView 
+    android:id="@+id/schinfotxt3" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="46.2000dip"
+    android:layout_below="@id/schinfotxt2"
+    android:layout_marginRight="14.4000dip"
+    android:gravity="right"
+    android:typeface="sans"
+    android:textSize="18.0000sp"   
+    /> 
+    
+    <TextView 
+    android:id="@+id/schinfotxt4" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@id/schinfotxt3"
+    android:layout_marginTop="15.0000dip"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="14.4000dip"
+    android:gravity="right"
+    android:typeface="sans"
+    android:textSize="18.0000sp"
+    /> 
+  </RelativeLayout>  
+   
+</RelativeLayout>
+
+</ScrollView>

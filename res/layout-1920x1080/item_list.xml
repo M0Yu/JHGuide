@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@null"
+            />
+  
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"      
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"        
+        android:background="@color/white"
+       
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="30dp" >
+
+            <TextView
+                android:id="@+id/sundriesName"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16.0000dp"     
+                android:layout_weight="1"
+                android:text="TextView" 
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="16.0000dp"
+                android:text="@string/type"
+                android:textColor="#ffc72a"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/wudi_line"
+            android:scaleType="fitXY" />
+        
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="fill_parent" >
+          <ProgressBar
+            android:id="@+id/sundriesImageProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+          <ImageView
+            android:id="@+id/sundriesImage"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"/>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        <TextView
+            android:id="@+id/sundriesDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="13dp"
+            android:text="我们都是一样的加油" 
+            android:textColor="#959595"/>
+        <TextView 
+            android:id="@+id/sundriesTime" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_alignParentBottom="true" 
+            android:layout_alignParentRight="true" 
+            android:layout_marginRight="20dp" 
+            android:text="2014-10-18" /> 
+        </RelativeLayout>
+    </LinearLayout>
+     
+    </LinearLayout>
+     
+
+</LinearLayout>

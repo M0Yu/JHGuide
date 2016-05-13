@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:gravity="center_horizontal" >
+
+    <EditText
+        android:id="@+id/log_in1_editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in1_editText1"
+        android:layout_below="@+id/log_in1_editText1"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:text="admin" />
+
+    <TextView
+        android:id="@+id/log_in1_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in1_button2"
+        android:layout_alignParentBottom="true"
+        android:text="@string/no_Account" />
+
+    <Button
+        android:id="@+id/log_in1_button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/log_in1_textView1"
+        android:gravity="bottom"
+        android:text="@string/Click_on_Register"
+        android:textColor="#ffcc66"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/log_in1_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/log_in1_button3"
+        android:text="@string/log_in" />
+
+    <TextView
+        android:id="@+id/log_in1_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:hint="@string/app_name2"
+        android:gravity="center"      
+        android:textSize="20dp"
+        android:background="@drawable/navegation_bar" />
+
+    <ImageButton
+        android:id="@+id/log_in1_imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/log_in1_textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/return1" />
+
+    <Button
+        android:id="@+id/log_in1_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in1_editText2"
+        android:layout_alignRight="@+id/log_in1_editText2"
+        android:layout_below="@+id/log_in1_editText2"
+        android:background="@drawable/entry"
+        android:text="@string/log_in" />
+
+    <EditText
+        android:id="@+id/log_in1_editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="@string/Account_number"
+        android:inputType="textPersonName"
+        android:text="201008204137" />
+
+    <ImageView
+        android:id="@+id/log_in1_imageView1"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_below="@+id/log_in1_textView3"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/photo" />
+
+</RelativeLayout>

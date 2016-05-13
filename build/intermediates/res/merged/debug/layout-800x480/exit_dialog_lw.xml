@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/finish"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="35.2dp"
+    android:layout_marginRight="35.2dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/lw_showexit_slider_layout"
+    >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="123.2dp" 
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/lw_top"
+        >
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+        android:layout_gravity="center"
+        android:text="@string/lw_show_point" 
+        android:textColor="#666666"
+        android:textSize="18.1333dp"
+    
+        />
+      <TextView 
+          android:layout_marginTop="20dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+           android:layout_gravity="center"
+          android:text="@string/lw_showExitContent"
+          android:textSize="18.1333dp"
+          />
+      </LinearLayout>
+      
+    <LinearLayout
+        android:id="@+id/linearLayout_lw"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/exit_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lw_show_Ok"         
+            android:textColor="#3c97e9"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/lw_showexit_ok"
+             />
+
+        <Button
+            android:id="@+id/exit_no"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lw_show_No" 
+             android:textColor="#3c97e9"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/lw_showexit_no"
+            />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/C:/Users/adminstrater/Desktop/Second%20WorkSpace/JHGuide/res/layout-800x480/exit_dialog_lw.xml -->

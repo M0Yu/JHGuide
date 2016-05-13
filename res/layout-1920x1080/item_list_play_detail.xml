@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="13.2000dp" >
+
+    <RelativeLayout
+        android:id="@+id/storeImageRelativeLayout"
+        android:layout_width="120.0000dp"
+        android:layout_height="108.0000dp"
+        android:background="@drawable/image_border" >
+
+        <ProgressBar
+            android:id="@+id/storeImageProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/storeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/empty_photo" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/storeName"
+        android:layout_width="wrap_content"
+        android:layout_height="24.0000dp"
+        android:layout_alignParentTop="true"
+        
+        android:layout_gravity="center_vertical"
+        
+        android:layout_marginLeft="123.75dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="TextView"
+        android:textSize="18.0000dp" />
+
+    <TextView
+        android:id="@+id/storeDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="123.75dp"
+        android:layout_marginTop="22.5dp"      
+        android:gravity="left"
+        android:lines="2"       
+        android:ellipsize="end"
+        android:text="TextView"
+        android:textSize="13.2000dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        style="@style/myratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/storeDescription"
+        android:layout_marginBottom="11.25dp"
+        android:layout_marginTop="72dp"
+        android:indeterminate="false"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="5"
+        android:soundEffectsEnabled="true"
+        android:stepSize="1" 
+        android:clickable="false"
+        android:focusable="false"/>
+
+    <LinearLayout
+        android:id="@+id/pointcollectcommentLinearlayout"
+        android:layout_width="93.6000dp"
+        android:layout_height="33.0000dp"
+        android:layout_alignBottom="@+id/storeImageRelativeLayout"
+        android:layout_alignRight="@+id/storeDescription"
+        android:layout_below="@+id/storeDescription"
+        android:layout_marginLeft="22.5dp"
+        android:layout_toRightOf="@+id/ratingBar1" >
+
+        <FrameLayout
+            android:id="@+id/pointFrameLayout"
+            android:layout_width="31.5dp"
+            android:layout_height="39.375dp"
+            android:layout_marginLeft="11.25dp"
+            android:layout_marginRight="5.625dp"
+            android:layout_marginTop="5.625dp"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:id="@+id/pointLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/pointButton"
+                    android:layout_width="24.0000dp"
+                    android:layout_height="24.0000dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/point_button_before"
+                    android:focusable="false" 
+                    android:clickable="false"/>
+
+                <TextView
+                    android:id="@+id/pointTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30.0000dp"
+                    android:maxLines="1"
+                    android:text="点赞"
+                    android:textSize="10.8000dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/pointButtonView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1.125dp"
+                android:layout_marginRight="1.125dp"
+                android:layout_marginTop="2.5dp"
+                android:background="#00000000"
+                android:focusable="false"
+                android:clickable="false" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/collectFrameLayout"
+            android:layout_width="39.375dp"
+            android:layout_height="39.375dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3.375dp" >
+
+            <LinearLayout
+                android:id="@+id/collectButtonLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="3.375dp"
+                android:layout_marginTop="1.125dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/collectButton"
+                    android:layout_width="24.0000dp"
+                    android:layout_height="22.5dp"
+                    android:layout_marginTop="14.625dp"
+                    android:background="@drawable/collect_button_before"
+                    android:focusable="false"
+                    android:clickable="false" />
+
+                <TextView
+                    android:id="@+id/collectTextview"
+                    android:layout_width="36.0000dp"
+                    android:layout_height="25.815dp"
+                    android:layout_marginBottom="5.625dp"
+                    android:layout_marginLeft="3.375dp"
+                    android:maxLines="1"
+                    android:text="收藏"
+                    android:textSize="10.8000dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/collectButtonView"
+                android:layout_width="38.4000dp"
+                android:layout_height="20.375dp"
+                android:layout_gravity="right|center_horizontal"
+                android:layout_marginTop="7.875dp"
+                android:background="#00000000"
+                android:focusable="false"
+                android:clickable="false" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/commentFramelayout"
+            android:layout_width="31.5dp"
+            android:layout_height="39.375dp"
+            android:layout_marginLeft="5.625dp"
+            android:layout_weight="0.57" >
+
+            <LinearLayout
+                android:id="@+id/commentButtonLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4.5dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/commentButton"
+                    android:layout_width="24.0000dp"
+                    android:layout_height="24.0000dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/comments_button"
+                    android:focusable="false"
+                    android:clickable="false" />
+
+                <TextView
+                    android:id="@+id/commentTextview"
+                    android:layout_width="25dp"
+                    android:layout_height="30.0000dp"
+                    android:maxLines="1"
+                    android:text="评论"
+                    android:textSize="10.8000dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/commentButtonView"
+                android:layout_width="27dp"
+                android:layout_height="50.625dp"
+                android:layout_marginLeft="1.125dp"
+                android:layout_marginRight="1.125dp"
+                android:layout_marginTop="6.75dp"
+                android:background="#00000000"
+                android:clickable="false"
+                android:focusable="false" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<resources>
+	<string name="type">TextView</string>
+    <string name="app_name">玩转江大</string>
+    <string name="action_search">搜索</string>
+    <string name="action_device_token">设备Token</string>
+    <string name="action_help_center">帮助中心</string>
+    <string name="action_about_us">关于信鸽</string>
+    <string name="action_clear">清除已收到通知</string>
+    <string name="action_setting">功能设置</string>
+    <string name="word">我来说一句</string>
+    <string name="pl">请输入评论信息</string>
+    <string name="send">发送</string>
+    <string name="mypl">我的评论</string>
+    <string name="userpl">用户评论</string>
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+    <string name="view_silder_menu01">关于我们</string>
+    <string name="view_silder_menu02">意见反馈</string>
+    <string name="view_silder_menu03">检查更新</string>
+    <string name="lw_view_silder_myMessages">我的消息</string>
+    <string name="view_silder_menu04">退出</string>
+    <string name="button_view_lw">提交</string>
+    <string name="suggestion_back">意见反馈</string>
+    <string name="editText_view_lw">我来说一句···</string>
+    <string name="textViewContent">欢迎您提出宝贵的意见和建议，您留下的每一个字都将用来改善我们的软件。</string>
+    <string name="password">密码</string>
+    <string name="no_Account">没有帐号？</string>
+    <string name="Click_on_Register">点击注册</string>
+    <string name="log_in">登入</string>
+    <string name="app_name2">个人中心</string>
+    <string name="Account_number">帐号</string>
+    <string name="comfirm_acount">再次确认密码</string>
+    <string name="Registration_log_in">注册并登入</string>
+    <string name="app_name1">注册</string>
+    <string name="enter_account">请输入帐号</string>
+    <string name="enter_password">请输入密码</string>
+    <string name="comment">我的评论</string>
+    <string name="collect">我的收藏</string>
+    <string name="picture">我的照片</string>
+    <string name="log_off_account">注销帐号</string>
+    <string name="Change_password">更改用户信息</string>
+    <string name="Enter_the_original_password">输入原始密码</string>
+    <string name="Enter_the_new_password">输入新密码</string>
+    <string name="Confirm">确认</string>
+    <string name="Change_passwords_error">更改密码不一致</string>
+    <string name="Password_Error">输入密码错误</string>
+    <string name="Return_to_retry">返回重试</string>
+    <string name="Enter_Nick">输入呢称</string>
+    <string name="Re_enter_nickname">输入新呢称</string>
+    <string name="aboutUs_titlebar">关于我们</string>
+    <string name="aboutUs_information">©2014 8+1 Allright Reserved</string>
+    <string name="aboutUs_edition">版本1.0</string>
+    <string name="aboutUs_Myedition">版本所属：江汉大学8+1团队</string>
+    <string name="aboutUs_technical_support">技术支持：江汉大学8+1团队</string>
+    <string name="aboutUs_technical_teachers">指导老师：邓宏涛</string>
+    <string name="aboutUs_code_team">开发人员：余杨志、范纯杰、张梦君、李维、罗雨昭</string>
+    <string name="aboutUs_UI_team">美工：胡慧婷、王文楷、李婷、高雅林子、高逸帆</string>
+    <string name="daa">2014-7-14</string>
+    <string name="action_settings">Settings</string>
+    <string name="_">请输入评论信息</string>
+    <string name="storeDetailExample">权金城韩国烧烤以经营正宗韩式烧烤，料理为主，是目前全国规模较大的韩餐连锁公司之一。公司总部设在全国大中城市设店</string>
+    <string name="activityContent">从本日起至9月20日不餐厅回馈新老客户，推出以下活动菜品：石锅拌饭，特色烤肉，夏日饮品。活动期间有买即送，满200减20。</string>
+    <string name="commentExample">确实是碳烤，也不给油，挺绿色的。环境服什么的都不错，送的小菜也很丰富，还有鳖鱼。但是小料太没味道了，导致觉得牛羊肉不好吃，很容易老，五花肉还可以，总体觉得味道一般，偏贵。</string>
+    <string name="map_department">教学</string>
+    <string name="map_dormitory">宿舍</string>
+    <string name="map_eat">美食</string>
+    <string name="map_scenery">风景</string>
+    <string name="map_serve">服务</string>
+    <string name="lw_show_point">提示</string>
+    <string name="lw_showExitContent">您将退出玩转江大，是否离开？</string>
+    <string name="lw_showUpdateDialogContent">目前有更新版本，是否升级?</string>
+    <string name="lw_show_Ok">确定</string>
+    <string name="lw_show_No">取消</string>
+    <string name="jhun_map_hint">搜索院系、地点或分类</string>
+    <string name="jhun_university">&#160;　　江汉大学是一所综合性普通高等学校，实行湖北省、武汉市共建，以武汉市为主的办学体制。学校总占地面积2114亩，校舍建筑面积59万平方米。主校区坐落在武汉经济技术开发区三角湖畔，这里湖山环抱，水天一色，风景秀丽，幽雅宜人，是理想的学习园地。\n
+　　学校拥有经济学、法学、教育学、文学、历史学、理学、工学、农学、医学、管理学、艺术学等11大学科门类，设有商学院、法学院、人文学院、美术学院、音乐学院、设计学院、机电与建筑工程学院、物理与信息工程学院、数学与计算机科学学院、化学与环境工程学院、医学院、生命科学学院、教育学院、外国语学院、体育学院、马克思主义学院、国际教育学院、护理与医学技术学院、高等职业技术学院、高尔夫学院、继续教育学院等21个学院和1个独立学院，63个本科专业。拥有2个硕士学位授权一级学科点，14个硕士学位授权二级学科点，1个专业硕士学位授权点。有3个省级重点学科，2个省级重点（培育）一级学科，7个市级重点学科，1个省级研究生教育创新基地，2个国家级特色专业，2个省级品牌专业，10门省级精品课程，3个省级教学团队。\n
+　　现有专任教师932人，其中副高以上职称510人，博士学历222人。有双聘院士1人，“楚天学者”12人，二级教授14人，享受国务院、省、市政府专项津贴及省市有突出贡献中青年专家45人。有1人入选教育部“新世纪优秀人才支持计划”，1人入选湖北省“新世纪高层次人才工程”优秀青年骨干人才，1人入选湖北省“百人计划”，16人入选武汉市“213人才工程”和“十百千人才工程”。全日制在校生17000余人。\n
+　　学校拥有教学科研仪器设备总值1.95亿元。现有省部共建教育部重点实验室1个、省级重点实验室2个、省级人文社科研究重点基地2个，省级协同创新中心1个、省级实验教学示范中心6个。图书馆藏书202万余册，电子图书52万册，中外文期刊2100余种，中外文数据库49个。\n
+　　学校设有武汉研究院、交叉学科研究院、武汉生物医学研究院等51个科研机构，承担大量国家级、省部级科研项目（课题），不少项目（课题）成果达到国内、国际先进水平，获国家、省部级奖励。《江汉大学学报》荣获全国人文社科学报三十佳学报称号。\n
+　　学校坚持对外开放，注重开展国际交流与合作，与美、英、法、德、日、荷、奥、加、韩等国的高校和教育组织建立了良好的学术交流与合作关系。\n
+　　学校坚持立足武汉，服务社会，以本科教育为主，积极发展研究生教育，协调发展高等职业教育、继续教育，不断深化教育教学改革，着力培养具有创新精神和实践能力的高素质应用性、创造性、国际性人才，努力为地方经济建设和社会发展服务。\n
+　　全校师生正以昂扬的姿态，朝着建设与武汉经济社会发展地位和水平相适应、在国内有影响有特色的高水平地方综合性大学的目标阔步迈进！\n\n
+　　耕耘砥砺传薪火,江汉桃李溢芳菲.\n\n
+　　1998年8月，武汉市决定，原江汉大学、华中理工大学汉口分校、武汉教育学院和武汉市职工医学院合并，新建江汉大学。2001年10月17日，教育部正式批准合并组建新的江汉大学。\n
+　　十年来，江大人励精图治，筚路蓝缕，探索奋进，取得了骄人的成绩。在合并组建十周年庆祝活动筹备工作中，学校研究决定并报请市领导同意，自2011年10月开始，学校校名使用胡耀邦同志手书体。\n
+　　这使我们回忆起时任中共中央总书记胡耀邦同志为我校题写校名的来历。1978年，我们党召开十一届三中全会，作出了把工作重点转移到社会主义现代化建设上来的战略决策，我国社会主义改革开放事业揭开了序幕。\n
+　　当时,各类人才奇缺是经济建设和社会发展的突出矛盾，多出人才、快出人才成为时代的迫切要求。伴随经济体制改革开放的春风，江汉大学等一批新型的地方大学犹如雨后春笋应运而生，从上世纪70年代末到80年代初短短的几年间，\n
+　　全国各地创办这类新型的地方大学128所。江汉大学是这类学校中创办最早的大学之一，在这类大学中发挥着领头雁的作用。\n
+　　十年间，江大不断整合办学资源，十年大跨越，合并组建以来，获省部级以上奖励40项，市级奖励167项；获各类知识产权授权137项。科研经费达19244万元，年科研项目经费从2001年的119.4万元增至2010年的6013.6万元，增长了50多倍。\n
+　　在合并组建之后的10年期间，江汉大学持续发展壮大，现有55个本科专业，2个国家特色专业，2个省级品牌专业。2个硕士学位一级学科授权点，11个硕士学位二级学科授权点。拥有1个湖北省重点实验室，4个重点产业化基地，3个省级工程技术研发中心，一个省级研究生教育创新基地。\n
+　　该校先后与东风本田、武汉中博生物、武汉传神信息、武汉地铁集团、盐田港集团等十多家大型企业联合开展相关专业人才培养工作。\n
+　　学校与武汉开发区、东湖高新区、武汉化工新区、武汉市民政局、武汉市农业局等政府部门签订了战略合作协议。政府、企事业单位、行业专家共同参与学校确定专业人才培养目标、人才培养规格，共同制定人才培养方案，共同开发课程，共建实验室及实习实践基地，共建“双师型”教师队伍。\n
+　　为提高学生的职业技能，增强其就业竞争力，该校还与地方劳动保障部门合作，在学校建立多个职业技能培训中心和鉴定站，将技能培训纳入教学计划。\n
+　　10年来，该校学生在机械创新设计大赛、数学建模竞赛、电子设计大赛、广告设计大赛、“挑战杯”大学生课外科技作品竞赛等有影响的重大学科竞赛中获得省级以上奖励490多项，其中部分奖项在省内高校名列前茅。\n</string>
+    <string name="mpraise">mpraise</string>
+    <string name="mcollnation">mcollnation</string>
+    <string name="mid">mid</string>
+    <string name="mpage">mpage</string>
+    <string name="xyxq">校园详情</string>
+    <string name="me">me</string>
+    <string name="pic_position">pic_position</string>
+    <string name="ispoint">ispoint</string>
+    <string name="iscollect">iscollect</string>
+    <string name="storeid">storeid</string>
+    <string name="lyz_download">您并未下载该软件，是否下载？</string>
+    <string name="tip">交易类型</string>
+    
+    <string name="menu_settings">Settings</string>
+</resources>

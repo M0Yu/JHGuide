@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51.2dp"
+        android:background="@drawable/navegation"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/imagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14.06dp"
+            android:layout_marginLeft="7.27dp"
+            android:layout_marginTop="14.06dp"
+            android:background="@color/white"
+            android:src="@drawable/returnbutton" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/mypl"
+            android:textColor="#ffc72a"
+            android:textSize="16.48sp" />
+
+        <TextView
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="14.55dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/send"
+            android:textColor="#ffc72a" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:gravity="center_horizontal" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/Change_password"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:background="@drawable/navegation_bar" />
+
+    <ImageButton
+        android:id="@+id/log_in4_imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/return1" />
+
+    <Button
+        android:id="@+id/log_in4_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in4_editText3"
+        android:layout_alignRight="@+id/log_in4_editText3"
+        android:layout_below="@+id/log_in4_editText3"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/entry"
+        android:text="@string/Confirm" />
+
+    <EditText
+        android:id="@+id/log_in4_editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_in4_editText1"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/Enter_the_new_password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/log_in4_editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_in4_editText2"
+        android:layout_below="@+id/log_in4_editText2"
+        android:ems="10"
+        android:hint="@string/comfirm_acount"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/log_in4_editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="@string/Re_enter_nickname"
+        android:inputType="textPersonName" >
+    
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/log_in4_editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_in4_editText4"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/Enter_the_original_password"
+        android:inputType="textPassword" />
+
+
+
+</RelativeLayout>

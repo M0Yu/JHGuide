@@ -1,0 +1,23 @@
+<com.ab.view.pullview.AbPullToRefreshView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mPullRefreshView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/commentlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:divider="@drawable/com_line"
+		android:dividerHeight="1.0667dp"
+        android:orientation="vertical" 
+        android:background="#ebebeb" >
+    </ListView>
+
+</com.ab.view.pullview.AbPullToRefreshView>

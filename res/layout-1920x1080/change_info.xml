@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="57dp"
+        android:background="@drawable/navegation_bar"
+        android:gravity="left" >
+
+        <TextView
+            android:id="@+id/l4_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="修改资料"
+            android:textColor="#ffc72a"
+            android:textSize="20.4dp" />
+
+        <Button
+            android:id="@+id/l4_button1"
+            android:layout_width="24dp"
+            android:layout_height="22.8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="9dp"
+            android:layout_alignTop="@+id/l4_textView6"
+            android:background="@drawable/return1" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="288dp"
+        android:background="@drawable/picturegai"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/l4_imageView1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/photo_03" />
+
+        <TextView
+            android:id="@+id/l4_textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/l4_imageView1"
+            android:layout_alignRight="@+id/l4_imageView1"
+            android:layout_below="@+id/l4_imageView1"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:textColor="#707070"
+            android:textSize="20.4dp"
+            android:text="胡慧婷" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/l4_linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="58.8dp"
+        android:layout_marginLeft="13.2dp"
+        android:layout_marginRight="13.2dp"
+        android:background="@drawable/navegation_bar" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="13.2dp"
+            android:textColor="#898989"
+            android:text="修改呢称" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l4_linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="58.8dp"
+        android:layout_marginLeft="13.2dp"
+        android:layout_marginRight="13.2dp"
+        android:background="@drawable/navegation_bar" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13.2dp"
+            android:textColor="#898989"
+            android:text="修改密码" />
+
+    </LinearLayout>
+    
+
+</LinearLayout>

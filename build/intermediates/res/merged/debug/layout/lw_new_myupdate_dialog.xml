@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     android:layout_marginLeft="35.2dp"
+    android:layout_marginRight="35.2dp"
+     android:layout_gravity="center"
+    android:background="@drawable/lw_showexit_slider_layout"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="123.2dp"
+        android:background="@drawable/lw_top"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/lw_show_point"
+            android:textColor="#666666"
+            android:textSize="18.1333dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/lw_showUpdateDialogContent"
+            android:textColor="#373737"
+            android:textSize="18.1333dp" />
+    </LinearLayout>
+
+    <LinearLayout 
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button 
+            android:id="@+id/ok"          
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lw_show_Ok"
+            android:textColor="#3c97e9"
+            android:textSize="16dp"
+            android:layout_weight="1"
+             android:background="@drawable/lw_showexit_ok"
+            />
+        <Button 
+            android:id="@+id/no"         
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lw_show_No"
+            android:textColor="#3c97e9"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/lw_showexit_no"
+            />
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/C:/Users/adminstrater/Desktop/Second%20WorkSpace/JHGuide/res/layout/lw_new_myupdate_dialog.xml -->

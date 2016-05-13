@@ -1,0 +1,426 @@
+package com.block.activity.government;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import jhunplay.com.fanjie.Constant.Constant;
+import jhunplay.com.fanjie.adapter.MyAdapter;
+import jhunplay.com.fanjie.ovrideLayout.MarqueeText;
+import jhunplay.com.fanjie.tool.Msharepreference;
+import jhunplay.com.fanjie.tool.Tool;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.ab.task.AbTask;
+import com.ab.task.AbTaskItem;
+import com.ab.task.AbTaskListListener;
+import com.ab.task.AbTaskListener;
+import com.ab.view.pullview.AbPullToRefreshView;
+import com.ab.view.pullview.AbPullToRefreshView.OnFooterLoadListener;
+import com.ab.view.pullview.AbPullToRefreshView.OnHeaderRefreshListener;
+import com.block.jhguide.R;
+import com.fanjie.activity.infor.Information;
+
+import android.R.integer;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AbsListView;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+@SuppressLint("ValidFragment")
+public class XueGongBu extends Fragment implements OnHeaderRefreshListener,
+		OnFooterLoadListener {
+	private TextView textview;
+	private MarqueeText autotextview;
+	private ArrayList<Map<String, Object>> lists;
+	private MyAdapter adapter = null;
+	private ListView listview;
+	private AbPullToRefreshView mAbPullToRefreshView = null;
+	private int currentPage=1;
+	private MarqueeText Auto;
+	private Context mContext;
+	private Msharepreference msharepreference;
+
+	private WindowManager.LayoutParams wmParams = null;
+	private boolean isFirstPosition = true;
+
+	// ImageView的alpha值
+	private int mAlpha = 0;
+	private boolean isHide;
+	private ImageView btn = null;
+
+	HttpClient client = new DefaultHttpClient();
+	private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+	private List<Map<String, Object>> addlist = new ArrayList<Map<String, Object>>();
+	private int currentPageStart= 0;
+	private int currentPageEnd=2;
+	private String sessionkey;
+	private int WebPage;
+	private List<Map<String,Object>>SumList=new ArrayList<Map<String,Object>>();
+	private List<Map<String,Object>>newSumList=new ArrayList<Map<String,Object>>();
+	public XueGongBu() {
+
+	}
+
+	public XueGongBu(int page) {
+
+		this.WebPage = page;
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);		
+		loadMoreTask();
+	}
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.wshview_topcontent_xuegongbu,
+				null);
+		mAbPullToRefreshView = (AbPullToRefreshView) view
+				.findViewById(R.id.mPullRefreshView1);
+
+		listview = (ListView)view.findViewById(R.id.LifeIfoLv);
+		textview=(TextView)view.findViewById(R.id.LifeInfoTxt1);
+		autotextview=(MarqueeText)view.findViewById(R.id.auto);
+//	    Typeface typeface=Typeface.createFromAsset(getActivity().getAssets(),
+//				"fonts/lanting.TTF");
+//	    textview.setTypeface(typeface);
+//	    autotextview.setTypeface(typeface);
+	    
+		autotextview.setText("00000000000000000000000000");
+		msharepreference = new Msharepreference(getActivity(), "information");
+		sessionkey = msharepreference.getStringProperty("sessionkey");
+		//loadMoreTask();
+
+		adapter = new MyAdapter(getActivity(), list, R.layout.listadapter,
+				new String[] { "details", "info_time" }, new int[] {
+						R.id.LifeInfoTxt2, R.id.LifeInfoTxt3 });
+		listview.setAdapter(adapter);
+		listview.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getActivity(), Information.class);
+				getActivity().startActivity(intent);
+			}
+
+		});
+
+		// setAutoTxt(null);
+//		Auto = (MarqueeText) view.findViewById(R.id.auto);
+
+		autotextview.startFor0();
+
+		initBasicView();
+		setListener();
+		// initFloatView();
+		return view;
+
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+	}
+
+	private void initBasicView() {
+		mAbPullToRefreshView.getHeaderView().setHeaderProgressBarDrawable(
+				this.getResources().getDrawable(R.drawable.progress_circular));
+	}
+
+	private void setListener() {
+		mAbPullToRefreshView
+				.setOnHeaderRefreshListener(new OnHeaderRefreshListener() {
+
+					@Override
+					public void onHeaderRefresh(AbPullToRefreshView view) {
+						// TODO Auto-generated method stub
+						refreshTask();
+					}
+				});
+
+		mAbPullToRefreshView
+				.setOnFooterLoadListener(new OnFooterLoadListener() {
+
+					@Override
+					public void onFooterLoad(AbPullToRefreshView arg0) {
+						// TODO Auto-generated method stub
+						loadMoreTask();
+					}
+				});
+
+		autotextview.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				ArrayList<String>Info1=new ArrayList<String>();
+				ArrayList Info=new ArrayList();
+				Info1.add("生活信息");
+				Info1.add("电脑和撒谎都解散你能打卡                                           初看上你非常肯定是男的看美女慢点开什么                                                    没事的旅客们都快死了没法看                               的进口大规模开发V迷，发没v没法看来大家                                                              方面看动漫，发没v， ldfdmklmf/dlfvml"
+						+ "/k看对方能克服的单位hi恩的扩散可能刷卡鄂温克到呢卡拉是妇女的快乐撒，林妙可我看了分开完了发么看来额外人纷纷开了房门口二维码开慢点开阀门呢j学工部儿科为甲方可监控了我看了抚摸你开了电脑发呆，没v额外那看来房价而看到方面看恩罚款了大明法度，什么二娃麦克风门第三方，的"
+						+ "kdnask anskd你多少分科目上年度啊什么的快乐女神没胃口了尼玛的 ");
+				Info1.add("后勤部");
+				Info1.add(textview.getText().toString());
+				Info.addAll(Info1);
+				Bundle mBundle=new Bundle();
+				mBundle.putParcelableArrayList("Info", Info);
+				Intent intent = new Intent(getActivity(), Information.class);
+				intent.putExtras(mBundle);
+				getActivity().startActivity(intent);
+			}
+		});
+
+		listview.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				ArrayList<String> Info1=new ArrayList<String>();
+				ArrayList Info=new ArrayList();
+				Info1.add(SumList.get(arg2).get("info_style").toString());
+				Info1.add(SumList.get(arg2).get("details").toString());
+				Info1.add(SumList.get(arg2).get("info_part").toString());
+				Info1.add(SumList.get(arg2).get("info_time").toString());
+				Info.addAll(Info1);
+				Bundle mBundle=new Bundle();
+				mBundle.putParcelableArrayList("Info", Info);				
+				Intent intent = new Intent(getActivity(), Information.class);
+				intent.putExtras(mBundle);
+				getActivity().startActivity(intent);
+			}
+
+		});
+
+		listview.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				// TODO Auto-generated method stub
+				getActivity().onTouchEvent(arg1);
+				return false;
+			}
+		});
+		listview.setOnScrollListener(new OnScrollListener() {
+
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+				// TODO Auto-generated method stub
+			
+			}
+
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+	}
+
+	private void refreshTask() {
+		AbTask mAbTask = new AbTask();
+		final AbTaskItem item = new AbTaskItem();
+		item.setListener(new AbTaskListListener() {
+
+			@Override
+			public void update(List<?> paramList) {
+				List<Map<String, Object>> newList = (List<Map<String, Object>>) paramList;
+				if (newList != null && newList.size() > 0) {
+					list.addAll(newList);
+					adapter.notifyDataSetChanged();
+					newList.clear();
+				}if(newList.size() < Constant.COUNT){
+					Toast.makeText(getActivity(), Constant.NOMOREINFR, 0).show();
+				}
+				mAbPullToRefreshView.onHeaderRefreshFinish();
+
+			}
+
+			@Override
+			public List<?> getList() {
+				List<Map<String, Object>> newList = null;
+				try {
+					currentPage++;
+					Thread.sleep(1000);
+					newList = new ArrayList<Map<String, Object>>();
+					JSONObject jsonObject = new JSONObject();
+					jsonObject.put("ids", "school_info");
+					jsonObject.put("style", WebPage);
+					jsonObject.put("min", currentPageStart);					
+					jsonObject.put("max", Constant.COUNT);
+					//currentPageStart+=2;
+					//jsonObject.put("sessionkey", sessionkey);
+					//String result = Tool.httpPost(jsonObject);
+					//newList = Tool.Json(result, "details", "info_time");
+
+				} catch (Exception e) {
+					currentPage--;
+					newList.clear();
+
+				}
+				return newList;
+			};
+		});
+
+		mAbTask.execute(item);
+
+	}
+	
+	public void loadMoreTask() {
+		AbTask mAbTask = new AbTask();
+		final AbTaskItem item = new AbTaskItem();
+		item.setListener(new AbTaskListListener() {			  
+			@Override
+			public void update(List<?> paramList) {
+				List<Map<String, Object>> newList = (List<Map<String, Object>>) paramList;
+			    if (newList != null && newList.size() > 0) {
+					list.addAll(newList);
+					adapter.notifyDataSetChanged();					
+					newList.clear();
+			    }if(newList.size()==0){
+//					Toast.makeText(getActivity(), Constant.NOMOREINFR, 0).show();
+				}
+				mAbPullToRefreshView.onFooterLoadFinish();                
+			}
+
+			@Override
+			public List<?> getList() {
+				List<Map<String, Object>> newList = null;
+				try {
+					currentPage++;
+					Thread.sleep(1000);
+					newList = new ArrayList<Map<String, Object>>();
+					JSONObject jsonObject = new JSONObject();
+					jsonObject.put("ids", "school_info");
+//					jsonObject.put("register","true");
+					jsonObject.put("style", WebPage);
+					jsonObject.put("min", currentPageStart);					
+					jsonObject.put("max", Constant.COUNT);		
+					//jsonObject.put("sessionkey", sessionkey);
+					currentPageStart+=Constant.COUNT;
+					String result = Tool.registPost(jsonObject);				
+					newList = Tool.Json(result, "details", "info_time");
+					newSumList=Tool.Json(result, "details", "info_time","info_part","info_style");
+					SimpleDateFormat sdf=new SimpleDateFormat("yy-MM-dd");
+					
+					for(int i=0;i<newList.size();i++){
+						Map<String,Object> map=new HashMap<String, Object>();
+						Map<String,Object> newmap=new HashMap<String, Object>();
+						long time=Long.parseLong(newList.get(i).get("info_time").toString());
+						Date d=new Date(time);						
+	                    map.put("details", newList.get(i).get("details"));
+	                    map.put("info_time",sdf.format(d));
+	                    newList.set(i, map);
+	                    newmap.put("details", newSumList.get(i).get("details"));
+	                    newmap.put("info_time", sdf.format(d));
+	                    newmap.put("info_part",newSumList.get(i).get("info_part"));
+	                    newmap.put("info_style", newSumList.get(i).get("info_style"));
+	                    newSumList.set(i, newmap);
+					}                   
+                    SumList.addAll(newSumList); 
+                  
+				} catch (Exception e) {
+					currentPage--;
+					newList.clear();
+
+				}
+				return newList;
+			};
+		});
+
+		mAbTask.execute(item);
+	}
+
+	@Override
+	public void onFooterLoad(AbPullToRefreshView arg0) {
+		// TODO Auto-generated method stub
+		loadMoreTask();
+	}
+
+	@Override
+	public void onHeaderRefresh(AbPullToRefreshView arg0) {
+		// TODO Auto-generated method stub
+		refreshTask();
+
+	}
+
+
+
+		protected String getStringHttp(JSONObject... params) {
+			// TODO Auto-generated method stub
+			String result=null;
+			try{
+				List<NameValuePair>parms=new ArrayList<NameValuePair>();
+			    String id=params[0].optString("ids");
+			    String register=params[0].optString("register");
+			    params[0].remove("ids");
+			    params[0].remove("regiter");
+			    HttpClient client=new DefaultHttpClient();
+			    HttpPost post=new HttpPost(Constant.URL2);
+			    
+			    parms.add(new BasicNameValuePair("ids", id));
+			    parms.add(new BasicNameValuePair("register", register));
+			    parms.add(new BasicNameValuePair("params", params[0].toString()));
+			    post.setEntity(new UrlEncodedFormEntity(parms,HTTP.UTF_8));
+			    HttpResponse response=client.execute(post);
+			    if(response.getStatusLine().getStatusCode()==200){
+			    	result=EntityUtils.toString(response.getEntity());
+			    }
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			return result;
+		}
+		
+	
+
+}

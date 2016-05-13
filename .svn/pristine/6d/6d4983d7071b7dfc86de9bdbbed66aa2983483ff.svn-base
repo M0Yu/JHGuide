@@ -1,0 +1,202 @@
+package com.block.fragment.content;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jhunplay.com.block.tool.MyApplication;
+import jhunplay.com.block.tool.MyApplication.CGSize;
+
+import com.block.activity.government.Fragment1;
+import com.block.activity.government.Fragment2;
+import com.block.activity.government.Fragment3;
+import com.block.activity.government.Fragment4;
+import com.block.activity.government.Fragment5;
+import com.block.jhguide.R;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+
+public class Government1 extends Fragment implements OnClickListener{
+
+	// content页面容器
+	private ViewPager pager;
+	// content页面适配器
+	private MyPagerAdapter adapter;
+	// 顶部滑动菜单
+	private List<String> tabTexts;
+	ArrayList<Button> tabBtns;
+	// content页面列表
+	private List<Fragment> mFragments;
+	//当前tab的index
+	int currentpage = 0 ;
+	//屏幕宽高数据
+	CGSize screenSize ;
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.view_tabcontent_government, null);
+		initdate(view);
+		initView(view);
+		return view;
+	}
+
+	/**
+	 * 说明:初始化当前页面tabs所需要的数据
+	 * @param view
+	 */
+	private void initdate(View view) {
+		// TODO Auto-generated method stub
+		screenSize = MyApplication.getWindowsize(getActivity());
+		tabTexts = new ArrayList<String>();
+		mFragments = new ArrayList<Fragment>();
+		tabBtns = new ArrayList<Button>();
+		tabTexts.add("学工部");
+		tabTexts.add("团委");
+		tabTexts.add("学生会");
+		tabTexts.add("社团");
+		tabTexts.add("江大概况");
+		mFragments.add(new Fragment1());
+		mFragments.add(new Fragment2());
+		mFragments.add(new Fragment3());
+		mFragments.add(new Fragment4());
+		mFragments.add(new Fragment5());
+		tabBtns.add((Button) view.findViewById(R.id.topbutton1));
+		tabBtns.add((Button) view.findViewById(R.id.topbutton2));
+		tabBtns.add((Button) view.findViewById(R.id.topbutton3));
+		tabBtns.add((Button) view.findViewById(R.id.topbutton4));
+		tabBtns.add((Button) view.findViewById(R.id.topbutton5));
+	}
+	/**
+	 * 说明: 完成当前页面的页面配置
+	 * @param view
+	 */
+	private void initView(View view) {
+		// TODO Auto-generated method stub
+		pager = (ViewPager) view.findViewById(R.id.toppager);
+		adapter = new MyPagerAdapter(this.getChildFragmentManager());
+		pager.setAdapter(adapter);
+		final int pageMargin = (int) TypedValue.applyDimension(
+				TypedValue.COMPLEX_UNIT_DIP, 20, getResources()
+						.getDisplayMetrics());
+		pager.setPageMargin(pageMargin);
+		initTopBtn();
+		setListener();
+	}
+	private void initTopBtn() {
+		// TODO Auto-generated method stub
+		if (tabBtns!=null&&tabBtns.size()>0) {
+			for (int i = 0; i < tabBtns.size(); i++) {
+				LayoutParams params = tabBtns.get(i).getLayoutParams();
+				params.width = (int)screenSize.width/5 ;
+				tabBtns.get(i).setLayoutParams(params);
+				tabBtns.get(i).setText(tabTexts.get(i));
+			}
+		}
+	}
+	private void setListener() {
+		// TODO Auto-generated method stub
+		if (tabBtns!=null&&tabBtns.size()>0) {
+			for (int i = 0; i < tabBtns.size(); i++) {
+				tabBtns.get(i).setOnClickListener(this);
+				tabBtns.get(i).setTag(new Integer(i));
+			}
+		}
+		if (pager!=null) {
+			pager.setOnPageChangeListener(new OnPageChangeListener() {
+				
+				@Override
+				public void onPageSelected(int arg0) {
+					// TODO Auto-generated method stub
+					System.out.println("~~"+arg0);
+					selectedPageAt(arg0);
+				}
+				
+				@Override
+				public void onPageScrolled(int arg0, float arg1, int arg2) {
+					// TODO Auto-generated method stub
+				}
+				
+				@Override
+				public void onPageScrollStateChanged(int arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+		}
+	}
+
+	@Override
+	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+	}
+
+	public class MyPagerAdapter extends FragmentPagerAdapter {
+
+		private final String[] TITLES = { "学工部", "团委", "学生会", "社团", "江大概况" };
+
+		public MyPagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return TITLES[position];
+		}
+
+		@Override
+		public int getCount() {
+			return TITLES.length;
+		}
+
+		@Override
+		public Fragment getItem(int position) {
+			return mFragments.get(position);
+		}
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		selectedPageAt((Integer)arg0.getTag() );
+		pager.setCurrentItem((Integer)arg0.getTag());
+	}
+
+	private void selectedPageAt(Integer index) {
+		// TODO Auto-generated method stub
+		currentpage = index ;
+		
+		selectedBtnAt(index);
+	}
+
+	private void selectedBtnAt(Integer index) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < tabBtns.size(); i++) {
+			unFocusBtn(tabBtns.get(i));
+		}
+		focusBtn(tabBtns.get(index));
+	}
+
+	private void focusBtn(Button button) {
+		// TODO Auto-generated method stub
+//		Toast.makeText(getActivity(), "selected", Toast.LENGTH_SHORT).show();
+	}
+
+	private void unFocusBtn(Button button) {
+		// TODO Auto-generated method stub
+		
+	}
+}

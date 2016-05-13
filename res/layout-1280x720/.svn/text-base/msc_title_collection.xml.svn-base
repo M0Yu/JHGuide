@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navegation_bar"
+        android:orientation="horizontal" >
+
+       
+
+        <TextView
+            android:id="@+id/mycollection"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_centerVertical="true"
+            android:gravity="center"    
+            android:text="我的收藏" />
+
+    </LinearLayout>
+ </LinearLayout>
